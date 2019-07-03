@@ -10,8 +10,10 @@ package com.sensetime.rxjavademo.core;
  * @updateDate $Date$
  * @updateDes
  */
-public abstract class Observable {
+public abstract class Observable<T> implements ObservableOnSubscribe<T>{
 
-
+    public static <T> ObservableOnSubscribe<T> create(ObservableOnSubscribe<T> observableOnSubscribe){
+        return observableOnSubscribe;
+    }
 
 }
