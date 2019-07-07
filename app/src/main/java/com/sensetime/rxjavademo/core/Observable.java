@@ -18,4 +18,14 @@ public abstract class Observable<T> /*implements ObservableOnSubscribe<T>*/{
         return observable;
     }
 
+    public Observable<T> nullMap(){
+        return new Observable<T>() {
+            @Override
+            public void subscribe(Observer<T> observer) {
+
+                Observable.this.subscribe(observer);
+            }
+        };
+    }
+
 }
